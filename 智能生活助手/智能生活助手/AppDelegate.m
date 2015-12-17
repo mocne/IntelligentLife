@@ -16,7 +16,33 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    _window = window;
+    _window.backgroundColor = [UIColor whiteColor];
+    _window.hidden = NO;
+
+    UIViewController *FirstVC = [[UIViewController alloc] init];
+    UINavigationController *firstNav = [[UINavigationController alloc] initWithRootViewController:FirstVC];
+    
+    UIViewController *SecondVC = [[UIViewController alloc] init];
+    UINavigationController *secondNav = [[UINavigationController alloc] initWithRootViewController:SecondVC];
+    
+    UIViewController *ThirdVC = [[UIViewController alloc] init];
+    UINavigationController *thirdNav = [[UINavigationController alloc] initWithRootViewController:ThirdVC];
+    
+    UIViewController *ForthVC = [[UIViewController alloc] init];
+    UINavigationController *forthNav = [[UINavigationController alloc] initWithRootViewController:ForthVC];
+    
+    NSArray *viewControllers = @[firstNav,secondNav,thirdNav,forthNav];
+    
+    UITabBarController *mainViewController = [[UITabBarController alloc] init];
+    mainViewController.viewControllers = viewControllers;
+    
+    mainViewController.tabBar.tintColor = [UIColor blackColor];
+    _window.rootViewController = mainViewController;
+    
+    
     return YES;
 }
 
