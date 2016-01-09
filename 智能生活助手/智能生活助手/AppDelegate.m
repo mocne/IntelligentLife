@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "loginViewController.h"
 
 @interface AppDelegate ()
 
@@ -22,19 +23,11 @@
     _window.backgroundColor = [UIColor whiteColor];
     _window.hidden = NO;
 
-    UIViewController *FirstVC = [[UIViewController alloc] init];
+    loginViewController *FirstVC = [[loginViewController alloc] init];
     UINavigationController *firstNav = [[UINavigationController alloc] initWithRootViewController:FirstVC];
     
-    UIViewController *SecondVC = [[UIViewController alloc] init];
-    UINavigationController *secondNav = [[UINavigationController alloc] initWithRootViewController:SecondVC];
     
-    UIViewController *ThirdVC = [[UIViewController alloc] init];
-    UINavigationController *thirdNav = [[UINavigationController alloc] initWithRootViewController:ThirdVC];
-    
-    UIViewController *ForthVC = [[UIViewController alloc] init];
-    UINavigationController *forthNav = [[UINavigationController alloc] initWithRootViewController:ForthVC];
-    
-    NSArray *viewControllers = @[firstNav,secondNav,thirdNav,forthNav];
+    NSArray *viewControllers = @[firstNav];
     
     UITabBarController *mainViewController = [[UITabBarController alloc] init];
     mainViewController.viewControllers = viewControllers;
